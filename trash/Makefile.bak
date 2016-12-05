@@ -1,0 +1,19 @@
+librekv:util.o mmap.o cuckoo.o city.o super.o
+	gcc -o librekv util.o mmap.o cuckoo.o city.o super.o
+
+util.o:util.c util.h
+	gcc -o util.o -c util.c
+
+mmap.o:mmap.c
+	gcc -o mmap.o -c mmap.c
+
+cuckoo.o:cuckoo.h cuckoo.c
+	gcc -o cuckoo.o -c cuckoo.c
+
+city.o:city.c city.h
+	gcc -o city.o -c city.c
+
+super.o:super.c
+	gcc -o super.o -c super.c
+clean:
+	rm -rf *.o librekv
